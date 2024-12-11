@@ -69,7 +69,7 @@ jobs:
             cp "../target/${{ matrix.target }}/release/libextern_c_test.dll" ./libextern_c_test.dll
             cp "../prime.h" ./prime.h
             7z a "${{ matrix.archive-name }}" libextern_c_test.dll prime.h
-          else if [ "${{ matrix.build }}" = "macos" ]; then
+          elif [ "${{ matrix.build }}" = "macos" ]; then
             cp "../target/${{ matrix.target }}/release/libextern_c_test.dylib" ./libextern_c_test.dylib
             cp "../prime.h" ./prime.h
             tar -czf "${{ matrix.archive-name }}" libextern_c_test.dylib prime.h
